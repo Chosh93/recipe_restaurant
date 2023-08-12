@@ -1,13 +1,13 @@
 import React from "react";
 import { styled, css } from "styled-components";
 import CommonNavbar from "../components/common/CommonNavbar";
-import Popular from "../components/mainComp/Popular";
+import RecipeList from "../components/main/RecipeList";
 
 const MainPage = () => {
 
     return (
         <>
-        <Popular/>
+        <RecipeList/>
         </>
     )
 }

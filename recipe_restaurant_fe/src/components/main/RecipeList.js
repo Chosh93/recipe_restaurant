@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import recipeApi from "../../api/recipeApi";
 
@@ -19,7 +17,7 @@ const CardView = styled.div`
     display: flex;
     flex-direction: column;
     height: 320px;
-    padding: 0 24px;
+    padding: 15px 24px;
 `;
 
 const CardItemHeader = styled.div`
@@ -37,7 +35,7 @@ const CardItemImage = styled.div`
     background-image: url(${props => props.imagePath});
 `;
 
-const Popular = () => {
+const RecipeList = () => {
     const [recipeList, setRecipeList] = useState([]);
     
     useEffect(() => {
@@ -69,4 +67,4 @@ const Popular = () => {
     );
 };
 
-export default Popular;
+export default RecipeList;

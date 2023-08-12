@@ -42,7 +42,7 @@ const Footer =()=> {
           <span>개인정보처리방침</span>
           <span>FAQ</span>
         </div>
-      <p>Copyright 2023 (***) All rights reserved.</p>
+      <p>Copyright 2023 (recipe&restaurant) All rights reserved.</p>
       </div>
     </Container>
 
