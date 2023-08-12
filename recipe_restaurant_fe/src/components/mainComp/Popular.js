@@ -40,6 +40,8 @@ const numImages = 7;
 const imagePaths = Array.from({ length: numImages }, (_, index) => `../../images/cup-${index + 1}.jpg`);
 
 const Popular = () => {
+
+    
     return (
         <>
             <Container>
