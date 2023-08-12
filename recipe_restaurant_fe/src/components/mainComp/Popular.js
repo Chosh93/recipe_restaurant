@@ -1,5 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { styled } from "styled-components";
+import recipeApi from "../../api/recipeApi";
 
 const Container = styled.div`
     display: grid;
@@ -20,42 +23,48 @@ const CardView = styled.div`
 `;
 
 const CardItemHeader = styled.div`
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     text-align: center;
     padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const CardItemImage = styled.div`
     background-size: cover;
     height: 60%;
+    background-image: url(${props => props.imagePath});
 `;
-
-const CardItemDesc = styled.div`
-    font-size: 0.8rem;
-    padding: 10px 0;
-`;
-
-
-const numImages = 7;
-const imagePaths = Array.from({ length: numImages }, (_, index) => `../../images/cup-${index + 1}.jpg`);
 
 const Popular = () => {
-
+    const [recipeList, setRecipeList] = useState([]);
     
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await recipeApi.getRecipeInfo();
+                setRecipeList(response.data);
+                console.log(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData(); // fetchData 함수를 호출하여 데이터를 가져옴
+    }, []);
+
     return (
         <>
-            <Container>
-                {imagePaths.map((imagePath, index) => (
-                    <CardView key={index} className="card-view">
-                        <CardItemHeader>사진 제목 {index + 1}</CardItemHeader>
-                        <CardItemImage
-                            style={{ backgroundImage: `url(${imagePath})` }}
-                            className="card-item-image"
-                        />
-                        <CardItemDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</CardItemDesc>
-                    </CardView>
-                ))}
-            </Container>
+        <div>총 <b>{recipeList.length}</b>개의 레시피가 있습니다.</div>
+        <Container>
+            {recipeList.map((recipe, index) => (
+                <CardView key={index}>
+                    <CardItemImage imagePath={recipe.thumbImg} />
+                    <CardItemHeader>{recipe.name}</CardItemHeader>
+                </CardView>
+            ))}
+        </Container>
         </>
     );
 };
