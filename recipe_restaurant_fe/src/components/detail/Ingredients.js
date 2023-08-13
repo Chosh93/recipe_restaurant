@@ -8,13 +8,14 @@ const Cont_ingre2 = styled.div`
         font-size: 24px;
         color: #000;
         padding: 0 35px 30px 35px;
+        justify-content: center;
     }
 
     .ready_ingre3 {
         padding: 0 20px 18px;
         vertical-align: top;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
 
         b .ready_ingre3_tt {
@@ -51,31 +52,41 @@ const Cont_ingre2 = styled.div`
     }
 `;
 
-const Ingredients = () => {
+const Ingredients = ({ recipeData }) => {
+    if (!recipeData || !recipeData.ingredients) {
+        return <div>Loading...</div>; // 적절한 로딩 컴포넌트나 메시지를 추가하세요
+    }
+
+    const parsedIngredients = parseIngredients(recipeData.ingredients);
 
     return (
-        <>
         <Cont_ingre2>
-                <div className="best_tit"><b>재료</b></div>
-                <div className="ready_ingre3">
-                    <ul>
-                        <b className="ready_ingre3_tt">[재료]</b>
-                        <li>test1<span className="ingre_unit">test1</span></li>
-                        <li>test2<span className="ingre_unit">test2</span></li>
-                        <li>test3<span className="ingre_unit">test3</span></li>
-                        <li>test4<span className="ingre_unit">test4</span></li>
-                    </ul>
-                    <ul>
-                        <b className="ready_ingre3_tt">[양념]</b>
-                        <li>test1<span className="ingre_unit">test1</span></li>
-                        <li>test2<span className="ingre_unit">test2</span></li>
-                        <li>test3<span className="ingre_unit">test3</span></li>
-                        <li>test4<span className="ingre_unit">test4</span></li>
-                    </ul>
-                </div>
-            </Cont_ingre2>
-        </>
+            <div className="best_tit"><b>재료</b></div>
+            <div className="ready_ingre3">
+                <ul>
+                    <b className="ready_ingre3_tt">[재료]</b>
+                    {parsedIngredients.map((ingredient, index) => (
+                        <li key={index}>
+                            {ingredient.name}
+                            <span className="ingre_unit">{ingredient.quantity}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </Cont_ingre2>
     )
 }
+
+const parseIngredients = (ingredients) => {
+    const lines = ingredients.split('\n');
+    const parsedIngredients = lines.map(line => {
+        const lastSpaceIndex = line.lastIndexOf(' ');
+        const name = line.substring(0, lastSpaceIndex).trim();
+        const quantity = line.substring(lastSpaceIndex).trim();
+        return { name, quantity };
+    });
+    return parsedIngredients;
+}
+
 
 export default Ingredients;

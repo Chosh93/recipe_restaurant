@@ -12,18 +12,14 @@ import javax.persistence.*;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Recipes {
+public class RecipesStepImgurl {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "food_id")
+    @Column
     private String foodId;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "thumb_img")
-    private String thumbImg;
-    @Column(name = "intro", columnDefinition = "TEXT")
-    private String intro;
-    @Column(name = "ingredients", columnDefinition = "TEXT")
-    private String ingredients;
+    @Column(name = "step_number")
+    private String stepNumber;
+    @Column(name = "step_imgUrl")
+    private String stepImgUrl;
 }

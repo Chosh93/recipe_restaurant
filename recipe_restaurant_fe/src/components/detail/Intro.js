@@ -43,19 +43,19 @@ const View_summary_in = styled.div`
     text-align: center;
 `;
 
-const Intro = () => {
+const Intro = ({ recipeData }) => {
 
     return (
         <>
         <View_pic>
         <Centeredcrop>
-
+            <img src={recipeData.thumbImg} alt={recipeData.thumbImg} />
         </Centeredcrop>
         </View_pic>
         <View_summary>
-            <h3>testtest</h3>
+            <h3>{recipeData.name}</h3>
             <View_summary_in>
-                asdfasdf
+                {recipeData.intro}
             </View_summary_in>
         </View_summary>
         </>
