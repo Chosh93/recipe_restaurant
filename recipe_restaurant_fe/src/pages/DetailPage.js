@@ -27,6 +27,7 @@ const DetailPage = () => {
             <Ingredients />
             <Blank_bottom/>
             <RecipeStep />
+            <Blank_bottom/>
         </Container>
     )
 }

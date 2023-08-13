@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 
 const View_pic = styled.div`
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 60px 0 70px;
     position: relative;
     text-align: center;
