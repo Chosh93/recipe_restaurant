@@ -48,4 +48,12 @@ public class RecipesController {
         List<RecipesStepImgurl> recipesStepImgurl = recipesService.getRecipeStepImg(foodId);
         return new ResponseEntity<>(recipesStepImgurl, HttpStatus.OK);
     }
+
+    // 음식 검색 시 해당 음식 리스트 출력
+    @GetMapping("/search/{foodName}")
+    public ResponseEntity<List<Recipes>> getSearchRecipeInfo(@PathVariable String foodName) {
+        System.out.println(foodName);
+        List<Recipes> recipesList = recipesService.getSearchRecipes(foodName);
+        return new ResponseEntity<>(recipesList, HttpStatus.OK);
+    }
 }

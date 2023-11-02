@@ -9,6 +9,7 @@ import com.example.recipe_restaurant.repository.RecipesRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -48,5 +49,17 @@ public class RecipesService {
     public List<RecipesStepImgurl> getRecipeStepImg(String foodId){
         List<RecipesStepImgurl> stepImgList = recipeStepImgRepository.findAllByFoodId(foodId);
         return stepImgList;
+    }
+
+    // 특정 키워드를 포함하는 요리 리스트 조회
+    public List<Recipes> getSearchRecipes(String keyword){
+        List<Recipes> recipes = recipesRepository.findAll();
+        List<Recipes> matchRecipes = new ArrayList<>();
+        for(Recipes recipe : recipes){
+            if(recipe.getName().contains(keyword)){
+                matchRecipes.add(recipe);
+            }
+        }
+        return matchRecipes;
     }
 }
