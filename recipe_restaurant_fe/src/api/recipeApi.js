@@ -19,6 +19,11 @@ const recipeApi = {
 
     getRecipeStepImgInfo : async(foodId) => {
         return await axios.get(DOMAIN + "/recipes/stepimg/" + foodId);
+    },
+
+    getRecipeListSearch : async(foodName) => {
+        console.log(foodName);
+        return await axios.get(DOMAIN + "/recipes/search/" + foodName);
     }
 }
 

@@ -1,13 +1,12 @@
 import React from "react";
-import { Box, Button } from "./CommonNavbar";
-import SearchBox from "../SearchBox";
+import CommonNavbar, { Container, Button } from "./CommonNavbar";
 
 const Header = () => {
     return (
-        <Box>
-            <Button>오메~</Button>
-            <SearchBox/>
-        </Box>
+        <Container>
+            <Button to="/">오메~</Button>
+            <CommonNavbar/>
+        </Container>
     )
 }
 

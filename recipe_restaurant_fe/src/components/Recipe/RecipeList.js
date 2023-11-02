@@ -44,21 +44,27 @@ const StyledLink = styled(Link)`
     }
 `;
 
-const RecipeList = () => {
+const RecipeList = ({ searchResults }) => {
     const [recipeList, setRecipeList] = useState([]);
     
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await recipeApi.getRecipeListInfo();
-                setRecipeList(response.data);
-                console.log(response.data);
+                if (searchResults.length > 0) {
+                    // 만약 검색 결과가 존재하면 검색 결과를 사용
+                    setRecipeList(searchResults);
+                } else {
+                    // 검색 결과가 없을 때는 모든 메뉴 리스트를 가져오기
+                    const response = await recipeApi.getRecipeListInfo();
+                    setRecipeList(response.data);
+                    console.log(response.data);
+                }
             } catch (error) {
                 console.log(error);
             }
         };
-        fetchData(); 
-    }, []);
+        fetchData();
+    }, [searchResults]);
 
     return (
         <>

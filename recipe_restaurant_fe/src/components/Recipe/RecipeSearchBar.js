@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import React, { useState } from "react";
+import recipeApi from "../../api/recipeApi";
 import {MdSearch} from "react-icons/md"
 
 const SearchContainer = styled.div`
@@ -51,44 +52,41 @@ const SearchButton = styled(MdSearch)`
     }
 `
 
-const SearchBox = ({handlePlayList}) => {
-
+const RecipeSearchBar = ({ onSearch }) => {
     const [keyword, setKeyword] = useState("");
-    const [keywordArr, setKeywordArr] = useState([]);
 
     const onChangeKeyword = (e) => {
         const value = e.target.value;
         setKeyword(value);
-        setKeywordArr(value.split(" "));
     }
 
     const onClickSearch = async() => {
-        // console.log(keywordArr)
-        // try{
-        //     const rsp = await MainApi.searchPlayList(keywordArr);
-        //     if(rsp.status === 200){
-        //         console.log(rsp.data);
-        //         handlePlayList(rsp.data);
-        //     }
-        // } catch(error){
-        //     console.log(error);
-        // }
-        
+        try {
+            const response = await recipeApi.getRecipeListSearch(keyword);
+            onSearch(response.data); // 검색 결과를 상위 컴포넌트로 전달
+        } catch (error) {
+            console.log(error);
+        }
     }
-       // 엔터버튼
+
+    // Enter 키를 누르면 검색 실행
     const handleKeyPress = (e) => {
-        if(e.key === 'Enter') {
+        if (e.key === 'Enter') {
             onClickSearch();
         }
     }
 
-    return(
+    return (
         <SearchContainer>
-            <Input placeholder="음식을 검색하세요!" value={keyword} onChange={onChangeKeyword} onKeyDown={handleKeyPress}/>
-            <SearchButton onClick={onClickSearch} />
+                <Input
+                    placeholder="음식을 검색하세요!"
+                    value={keyword}
+                    onChange={onChangeKeyword}
+                    onKeyPress={handleKeyPress}
+                />
+                <MdSearch onClick={onClickSearch} />
         </SearchContainer>
-    
-    )
+    );
 }
 
-export default SearchBox;
+export default RecipeSearchBar;

@@ -54,7 +54,7 @@ const Cont_ingre2 = styled.div`
 
 const Ingredients = ({ recipeData }) => {
     if (!recipeData || !recipeData.ingredients) {
-        return <div>Loading...</div>; // 적절한 로딩 컴포넌트나 메시지를 추가하세요
+        return <div>Loading...</div>;
     }
 
     const parsedIngredients = parseIngredients(recipeData.ingredients);

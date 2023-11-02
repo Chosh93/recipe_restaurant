@@ -10,13 +10,12 @@ function App() {
   return (
     <Router>
       <Header/>
-      <CommonNavbar/>
       <Routes>
         <Route path="/recipe" element={<RecipePage/>} />
         <Route path="/recipe/:foodId" element={<RecipeDetailPage />} />
         <Route path="/restaurant" element={<RestaurantPage />} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </Router>
   );
 }
