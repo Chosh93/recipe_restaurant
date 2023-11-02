@@ -1,7 +1,6 @@
-// CommonNavbar.js
 import React from "react";
-import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import { styled } from "styled-components";
 
 const Container = styled.div`
     display: flex;
@@ -28,7 +27,7 @@ const Menu = styled.div`
 
 const Button = styled(Link)`
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     &:hover {
