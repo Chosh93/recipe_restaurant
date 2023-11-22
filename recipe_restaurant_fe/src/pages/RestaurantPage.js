@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "../components/common/Header";
 import RestaurantMap from "../components/restaurant/RestaurantMap";
 import RestaurantSearchBar from "../components/restaurant/RestaurantSearchBar";
 const RestaurantPage = () => {

@@ -89,6 +89,7 @@ const RestaurantMap = ({ searchKeyword }) => {
                 ps.keywordSearch(searchKeyword, placesSearch, {
                     location: new window.kakao.maps.LatLng(lat, lon),
                     radius: radius,
+                    category_group_code: "FD6",
                 });
 
                 // 검색 결과로 나온 결과의 위치에 마커 생성
