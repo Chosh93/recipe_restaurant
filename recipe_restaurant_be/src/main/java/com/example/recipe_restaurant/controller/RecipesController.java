@@ -1,5 +1,6 @@
 package com.example.recipe_restaurant.controller;
 
+import com.example.recipe_restaurant.entity.RecipeRank;
 import com.example.recipe_restaurant.entity.RecipesStepImgurl;
 import com.example.recipe_restaurant.entity.RecipesStepText;
 import com.example.recipe_restaurant.entity.Recipes;
@@ -55,5 +56,12 @@ public class RecipesController {
         System.out.println(foodName);
         List<Recipes> recipesList = recipesService.getSearchRecipes(foodName);
         return new ResponseEntity<>(recipesList, HttpStatus.OK);
+    }
+
+    // 레시피 조회순 검색
+    @GetMapping("/rank")
+    public ResponseEntity<List<RecipeRank>> getRecipeRank(){
+        List<RecipeRank> rankList = recipesService.getRecipeRank();
+        return new ResponseEntity<>(rankList, HttpStatus.OK);
     }
 }

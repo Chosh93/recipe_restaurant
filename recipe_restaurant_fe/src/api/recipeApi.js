@@ -24,6 +24,10 @@ const recipeApi = {
     getRecipeListSearch : async(foodName) => {
         console.log(foodName);
         return await axios.get(DOMAIN + "/recipes/search/" + foodName);
+    },
+
+    getRecipeRank : async() => {
+        return await axios.get(DOMAIN + "/recipes/rank/");
     }
 }
 

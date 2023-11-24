@@ -1,8 +1,10 @@
 package com.example.recipe_restaurant.service;
 
+import com.example.recipe_restaurant.entity.RecipeRank;
 import com.example.recipe_restaurant.entity.Recipes;
 import com.example.recipe_restaurant.entity.RecipesStepImgurl;
 import com.example.recipe_restaurant.entity.RecipesStepText;
+import com.example.recipe_restaurant.repository.RecipeRankRepository;
 import com.example.recipe_restaurant.repository.RecipeStepImgRepository;
 import com.example.recipe_restaurant.repository.RecipeStepTextRepository;
 import com.example.recipe_restaurant.repository.RecipesRepository;
@@ -21,11 +23,13 @@ public class RecipesService {
     private final RecipesRepository recipesRepository;
     private final RecipeStepTextRepository recipeStepTextRepository;
     private final RecipeStepImgRepository recipeStepImgRepository;
+    private final RecipeRankRepository recipeRankRepository;
 
-    public RecipesService(RecipesRepository recipesRepository, RecipeStepTextRepository recipeStepTextRepository, RecipeStepImgRepository recipeStepImgRepository) {
+    public RecipesService(RecipesRepository recipesRepository, RecipeStepTextRepository recipeStepTextRepository, RecipeStepImgRepository recipeStepImgRepository, RecipeRankRepository recipeRankRepository) {
         this.recipesRepository = recipesRepository;
         this.recipeStepTextRepository = recipeStepTextRepository;
         this.recipeStepImgRepository = recipeStepImgRepository;
+        this.recipeRankRepository = recipeRankRepository;
     }
 
 
@@ -61,5 +65,11 @@ public class RecipesService {
             }
         }
         return matchRecipes;
+    }
+
+    // 조회수 요리 리스트 조회
+    public List<RecipeRank> getRecipeRank(){
+        List<RecipeRank> rankList = recipeRankRepository.findTop10ByOrderByViewCountDesc();
+        return rankList;
     }
 }

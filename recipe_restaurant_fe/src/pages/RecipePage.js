@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import RecipeList from "../components/Recipe/RecipeList";
-import RecipeSearchBar from "../components/Recipe/RecipeSearchBar";
+import RecipeList from "../components/recipe/RecipeList";
+import RecipeSearchBar from "../components/recipe/RecipeSearchBar";
+import RecipeRank from "../components/recipe/RecipeRank";
 
 const RecipePage = () => {
     const [searchResults, setSearchResults] = useState([]);
@@ -12,6 +13,7 @@ const RecipePage = () => {
     return (
         <>
           <RecipeSearchBar onSearch={handleSearch} />
+          <RecipeRank/>
           <RecipeList searchResults={searchResults} />
         </>
     )
