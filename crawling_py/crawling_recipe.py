@@ -16,7 +16,7 @@ cursor = connection.cursor()
 # 크롤링할 URL 설정
 base_url = 'https://www.10000recipe.com/recipe/list.html?order=reco&page='
 starting_page = 1
-num_pages = 100  # 크롤링할 페이지 수
+num_pages = 50  # 크롤링할 페이지 수
 
 # 페이지 목록 만들기
 recipe_links = []
@@ -41,11 +41,9 @@ for link in recipe_links:
     img_src = recipe_soup.find('img', id='main_thumbs')['src']
 
     # 간단한 설명
-    intro_div = recipe_soup.find('div', id='recipeIntro')
-    if intro_div:
-        intro = intro_div.text.strip()
-    else:
-        intro = "소개글이 없습니다"
+    intro_elem = recipe_soup.find('div', id='recipeIntro')
+    intro = intro_elem.text.strip() if intro_elem else ""
+
     # 재료, 소스재료, 양념 등의 데이터 배열 저장
     ingredient_list = []
 
