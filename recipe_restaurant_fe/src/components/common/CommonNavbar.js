@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-import badal from "../../images/badal.jpg"
+import badal from "../../images/badal.jpg";
+import food from "../../images/food.png";
 
 const Container = styled.div`
     display: flex;
@@ -31,24 +32,34 @@ const Button = styled(Link)`
 `;
 
 const RecipeButton = styled(Button)`
-    background: #4CAF50; /* 레시피 구역 배경색 */
+    background: url(${food});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
     width: 50%;
-    
+    transition: background 0s;
+
+    &:hover {
+        background: url(${food});
+        background-size: cover;
+        background-position: center;
+    }
 `;
 
 const RestaurantButton = styled(Button)`
     background: url(${badal});
     background-size: cover;
-    background-repeat: no-repeat; /* Ensure the background image doesn't repeat */
-    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
     width: 50%;
     transition: background 0s;
 
     &:hover {
         background: url(${badal});
-        background-size: cover; /* Retain the cover size on hover */
+        background-size: cover;
+        background-position: center;
     }
 `;
 
