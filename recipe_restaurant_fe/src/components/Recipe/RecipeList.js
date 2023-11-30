@@ -57,7 +57,6 @@ const RecipeList = ({ searchResults }) => {
                     // 검색 결과가 없을 때는 모든 메뉴 리스트를 가져오기
                     const response = await recipeApi.getRecipeListInfo();
                     setRecipeList(response.data);
-                    console.log(response.data);
                 }
             } catch (error) {
                 console.log(error);
@@ -72,7 +71,7 @@ const RecipeList = ({ searchResults }) => {
         <Container>
             {recipeList.map((recipe, index) => (
                 <div key={index}>
-                    <StyledLink to={`/recipe/${recipe.foodId}`}>
+                    <StyledLink to={`/recipe/${recipe.foodId}`} >
                         <CardView>
                             <CardItemImage imagePath={recipe.thumbImg} />
                             <CardItemHeader>{recipe.name}</CardItemHeader>
