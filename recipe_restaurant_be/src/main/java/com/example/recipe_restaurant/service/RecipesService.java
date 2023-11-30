@@ -10,6 +10,8 @@ import com.example.recipe_restaurant.repository.RecipeStepTextRepository;
 import com.example.recipe_restaurant.repository.RecipesRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,9 @@ public class RecipesService {
 
     // 특정 요리 레시피 조회(이름, 인트로, 재료, 썸네일)
     public Recipes getRecipeInfoById(String foodId) {
+        RecipeRank recipeRank = recipeRankRepository.findByFoodId(foodId).get();
+        recipeRank.setViewCount(recipeRank.getViewCount() + 1);
+        recipeRankRepository.save(recipeRank);
         return recipesRepository.findByFoodId(foodId).orElse(null);
     }
 
@@ -69,7 +74,16 @@ public class RecipesService {
 
     // 조회수 요리 리스트 조회
     public List<RecipeRank> getRecipeRank(){
-        List<RecipeRank> rankList = recipeRankRepository.findTop10ByOrderByViewCountDesc();
+        List<RecipeRank> rankList = recipeRankRepository.findAllByOrderByViewCountDesc();
         return rankList;
+    }
+
+    // 조회수 증가
+    public void increaseViewCount(String foodId){
+        RecipeRank recipeRank = recipeRankRepository.findByFoodId(foodId)
+                .orElseThrow(() -> new EntityNotFoundException("RecipeRank not found with foodId: " + foodId));
+        recipeRank.setViewCount(recipeRank.getViewCount() + 1);
+        System.out.println("==================== 증가가 완료되었습니다.====================");
+        recipeRankRepository.save(recipeRank);
     }
 }

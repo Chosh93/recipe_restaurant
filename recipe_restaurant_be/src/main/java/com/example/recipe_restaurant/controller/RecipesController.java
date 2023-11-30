@@ -34,16 +34,17 @@ public class RecipesController {
     // 특정레시피 정보 조회
     @GetMapping("/{foodId}")
     public ResponseEntity<Recipes> getRecipeInfo(@PathVariable String foodId) {
+        System.out.println(foodId);
         Recipes recipeInfo = recipesService.getRecipeInfoById(foodId);
         return new ResponseEntity<>(recipeInfo, HttpStatus.OK);
     }
-
+    // foodId로 조리 순서 text 조회
     @GetMapping("/steptext/{foodId}")
     public ResponseEntity<List<RecipesStepText>> getRecipeStepText(@PathVariable String foodId) {
         List<RecipesStepText> recipeStepTextList = recipesService.getRecipeStepText(foodId);
         return new ResponseEntity<>(recipeStepTextList, HttpStatus.OK);
     }
-
+    // foodId로 조리 순서 img 조회
     @GetMapping("/stepimg/{foodId}")
     public ResponseEntity<List<RecipesStepImgurl>> getRecipeStepImg(@PathVariable String foodId) {
         List<RecipesStepImgurl> recipesStepImgurl = recipesService.getRecipeStepImg(foodId);
@@ -63,5 +64,17 @@ public class RecipesController {
     public ResponseEntity<List<RecipeRank>> getRecipeRank(){
         List<RecipeRank> rankList = recipesService.getRecipeRank();
         return new ResponseEntity<>(rankList, HttpStatus.OK);
+    }
+
+    // 클릭 시 조회수 증가
+    @GetMapping("/viewcount")
+    public ResponseEntity<Void> increaseViewCount(@PathVariable String foodId){
+        try {
+            recipesService.increaseViewCount(foodId);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            log.error("Error increasing view count for foodId: {}", foodId, e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

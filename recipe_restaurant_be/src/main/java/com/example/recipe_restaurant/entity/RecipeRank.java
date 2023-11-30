@@ -16,7 +16,6 @@ import javax.persistence.*;
 public class RecipeRank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Column(name = "food_id")
     private String foodId;
     @Column(name = "view_count")

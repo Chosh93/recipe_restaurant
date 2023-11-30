@@ -5,11 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface RecipeRankRepository extends JpaRepository<RecipeRank, Long> {
+public interface RecipeRankRepository extends JpaRepository<RecipeRank, String> {
     @Query("SELECT r FROM RecipeRank r ORDER BY r.viewCount DESC")
-    List<RecipeRank> findTop10ByOrderByViewCountDesc();
+    List<RecipeRank> findAllByOrderByViewCountDesc();
+    Optional<RecipeRank> findByFoodId(String foodId);
 }

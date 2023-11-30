@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5334807-3d0d-4b3b-b43e-322696753b79" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/components/restaurant/RestaurantMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/components/restaurant/RestaurantMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/pages/MainPage.js" afterDir="false" />
+    <list default="true" id="a5334807-3d0d-4b3b-b43e-322696753b79" name="변경" comment="랭크컴포넌트 슬라이스 추가">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawling_py/.idea/crawling_py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/.idea/crawling_py.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawling_py/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawling_py/crawling_recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/crawling_recipe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/controller/RecipesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/dto/RecipeRankDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/dto/RecipeRankDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/entity/RecipeRank.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/entity/RecipeRank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipeRankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipeRankRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/service/RecipesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/service/RecipesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/api/recipeApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/api/recipeApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/pages/RecipePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/pages/RecipePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2YTTgafDPSRgHnzAlEeDILlDLob" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/chosh/Desktop/개인프로젝트/recipe_restaurant/recipe_restaurant_fe"
+    "last_opened_file_path": "C:/Users/chosh/Desktop/개인프로젝트/recipe_restaurant"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
@@ -35,6 +51,18 @@
       <option name="presentableId" value="Default" />
       <updated>1700548681858</updated>
     </task>
+    <task id="LOCAL-00001" summary="랭크컴포넌트 슬라이스 추가">
+      <created>1701172968998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701172968998</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="랭크컴포넌트 슬라이스 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="랭크컴포넌트 슬라이스 추가" />
   </component>
 </project>

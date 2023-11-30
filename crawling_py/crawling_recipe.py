@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
+import pymysql
 
 # MySQL 연결 설정
 db_config = {
@@ -10,11 +10,11 @@ db_config = {
     'database': 'recipe_restaurant'
 }
 
-connection = mysql.connector.connect(**db_config)
+connection = pymysql.connect(host='localhost', port=3306, user='root', passwd='1234', db='recipe_restaurant')
 cursor = connection.cursor()
 
 # 크롤링할 URL 설정
-base_url = 'https://www.10000recipe.com/recipe/list.html?order=reco&page='
+base_url = 'https://www.10000recipe.com/recipe/list.html?q=&query=&cat1=&cat2=&cat3=&cat4=65&fct=&order=reco&lastcate=cat4&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='
 starting_page = 1
 num_pages = 50  # 크롤링할 페이지 수
 
@@ -26,7 +26,7 @@ for page_num in range(starting_page, starting_page + num_pages):
     soup = BeautifulSoup(response.content, 'html.parser')
     links = soup.find_all('a', class_='common_sp_link')
     recipe_links.extend([link['href'] for link in links])
-
+print(recipe_links)
 recipe_url = 'https://www.10000recipe.com'
 
 for link in recipe_links:
@@ -90,8 +90,8 @@ for link in recipe_links:
     ingredient_text = '\n'.join(ingredient_list)
 
     # SQL 쿼리 실행하여 데이터베이스에 저장
-    insert_query = "INSERT INTO recipes (food_id, name, thumb_img, intro, ingredients) VALUES (%s, %s, %s, %s, %s)"
-    data = (cleaned_link, h3_text, img_src, intro, ingredient_text)
+    insert_query = "INSERT INTO recipes (food_id, name, thumb_img, intro, ingredients, class) VALUES (%s, %s, %s, %s, %s, %s)"
+    data = (cleaned_link, h3_text, img_src, intro, ingredient_text, "양식")
     cursor.execute(insert_query, data)
     connection.commit()
 
