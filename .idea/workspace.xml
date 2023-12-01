@@ -10,14 +10,7 @@
       <change beforePath="$PROJECT_DIR$/crawling_py/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawling_py/crawling_recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/crawling_recipe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/controller/RecipesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/dto/RecipeRankDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/dto/RecipeRankDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/entity/RecipeRank.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/entity/RecipeRank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipeRankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipeRankRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/repository/RecipesRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/service/RecipesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/service/RecipesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/api/recipeApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/api/recipeApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_fe/src/pages/RecipePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_fe/src/pages/RecipePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +32,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/chosh/Desktop/개인프로젝트/recipe_restaurant"
+    "last_opened_file_path": "C:/Users/Chosh/OneDrive/바탕 화면/개인프로젝트/Project/레시피식당/recipe_restaurant_be"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />

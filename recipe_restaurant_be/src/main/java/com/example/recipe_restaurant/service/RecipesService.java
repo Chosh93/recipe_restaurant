@@ -42,15 +42,15 @@ public class RecipesService {
 
     // 특정 요리 레시피 조회(이름, 인트로, 재료, 썸네일)
     public Recipes getRecipeInfoById(String foodId) {
-        RecipeRank recipeRank = recipeRankRepository.findByFoodId(foodId).get();
-        recipeRank.setViewCount(recipeRank.getViewCount() + 1);
-        recipeRankRepository.save(recipeRank);
         return recipesRepository.findByFoodId(foodId).orElse(null);
     }
 
     // 특정 요리 조리 순서 텍스트 조회 (이름, 스텝번호, 스텝설명)
     public List<RecipesStepText> getRecipeStepText(String foodId){
         List<RecipesStepText> stepTextList = recipeStepTextRepository.findAllByFoodId(foodId);
+        RecipeRank recipeRank = recipeRankRepository.findByFoodId(foodId).get();
+        recipeRank.setViewCount(recipeRank.getViewCount() + 1);
+        recipeRankRepository.save(recipeRank);
         return stepTextList;
     }
 

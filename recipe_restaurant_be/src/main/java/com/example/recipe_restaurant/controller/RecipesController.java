@@ -65,16 +65,4 @@ public class RecipesController {
         List<RecipeRank> rankList = recipesService.getRecipeRank();
         return new ResponseEntity<>(rankList, HttpStatus.OK);
     }
-
-    // 클릭 시 조회수 증가
-    @GetMapping("/viewcount")
-    public ResponseEntity<Void> increaseViewCount(@PathVariable String foodId){
-        try {
-            recipesService.increaseViewCount(foodId);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (Exception e) {
-            log.error("Error increasing view count for foodId: {}", foodId, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }
