@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5334807-3d0d-4b3b-b43e-322696753b79" name="변경" comment="랭크컴포넌트 슬라이스 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawling_py/.idea/crawling_py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/.idea/crawling_py.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawling_py/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawling_py/crawling_recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling_py/crawling_recipe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/controller/RecipesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/service/RecipesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_restaurant_be/src/main/java/com/example/recipe_restaurant/service/RecipesService.java" afterDir="false" />
-    </list>
+    <list default="true" id="a5334807-3d0d-4b3b-b43e-322696753b79" name="변경" comment="2023/12/01 조회수 증가 수정 및 로그인 ing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,11 +44,19 @@
       <option name="project" value="LOCAL" />
       <updated>1701172968998</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2023/12/01 조회수 증가 수정 및 로그인 ing">
+      <created>1701423658182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701423658182</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="랭크컴포넌트 슬라이스 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="랭크컴포넌트 슬라이스 추가" />
+    <MESSAGE value="2023/12/01 조회수 증가 수정 및 로그인 ing" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/12/01 조회수 증가 수정 및 로그인 ing" />
   </component>
 </project>
