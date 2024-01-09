@@ -36,6 +36,15 @@ const CardItemImage = styled.div`
     background-image: url(${props => props.imagePath});
 `;
 
+const CardItemViewCount = styled.div`
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+`;
+
 const StyledLink = styled(Link)`
     text-decoration: none;
     color: black; 
@@ -46,6 +55,7 @@ const StyledLink = styled(Link)`
 
 const RecipeList = ({ searchResults }) => {
     const [recipeList, setRecipeList] = useState([]);
+    const [recipeViewCount, setRecipeViewCount] = useState([]);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -67,7 +77,6 @@ const RecipeList = ({ searchResults }) => {
 
     return (
         <>
-        <div>총 <b>{recipeList.length}</b>개의 레시피가 있습니다.</div>
         <Container>
             {recipeList.map((recipe, index) => (
                 <div key={index}>
@@ -75,6 +84,7 @@ const RecipeList = ({ searchResults }) => {
                         <CardView>
                             <CardItemImage imagePath={recipe.thumbImg} />
                             <CardItemHeader>{recipe.name}</CardItemHeader>
+                            <CardItemViewCount></CardItemViewCount>
                         </CardView>
                     </StyledLink>
                 </div>
