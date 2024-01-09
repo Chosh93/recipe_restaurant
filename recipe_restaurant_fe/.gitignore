@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+/workspace.xml
 # production
 /build
 

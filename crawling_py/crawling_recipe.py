@@ -14,7 +14,7 @@ connection = pymysql.connect(host='localhost', port=3306, user='root', passwd='1
 cursor = connection.cursor()
 
 # 크롤링할 URL 설정
-base_url = 'https://www.10000recipe.com/recipe/list.html?q=&query=&cat1=&cat2=&cat3=&cat4=65&fct=&order=reco&lastcate=cat4&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='
+base_url = 'https://www.10000recipe.com/recipe/list.html?q=%EC%A4%91%EC%8B%9D'
 starting_page = 1
 num_pages = 50  # 크롤링할 페이지 수
 
@@ -91,7 +91,7 @@ for link in recipe_links:
 
     # SQL 쿼리 실행하여 데이터베이스에 저장
     insert_query = "INSERT INTO recipes (food_id, name, thumb_img, intro, ingredients, class) VALUES (%s, %s, %s, %s, %s, %s)"
-    data = (cleaned_link, h3_text, img_src, intro, ingredient_text, "양식")
+    data = (cleaned_link, h3_text, img_src, intro, ingredient_text, "중식")
     cursor.execute(insert_query, data)
     connection.commit()
 
@@ -113,7 +113,7 @@ for link in recipe_links:
     connection.commit()
 
     # recipes_step_imgUrl 테이블에 데이터 저장
-    step_img_insert_query = "INSERT INTO recipes_step_imgUrl (food_id, step_number, step_img_url) VALUES (%s, %s, %s)"
+    step_img_insert_query = "INSERT INTO recipes_step_imgurl (food_id, step_number, step_imgUrl) VALUES (%s, %s, %s)"
     for step_number, step_img_url in enumerate(step_img_urls, start=1):
         step_img_data = (cleaned_link, step_number, step_img_url)
         cursor.execute(step_img_insert_query, step_img_data)
